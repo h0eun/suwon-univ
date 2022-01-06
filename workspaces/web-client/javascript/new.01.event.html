@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <button onclick="alert('clicked')">CLICK HERE 1</button>
+        <button id="btn2">CLICK HERE 2</button>
+        <button id="btn3">CLICK HERE 3</button>
+        <button id="btn4">CLICK HERE 4</button>
+
+        <script type="text/javascript">
+
+            function clickHandler(event) {
+                alert('두 번째 버튼 클릭');
+            }
+            // var myFunction = clickHandler; // 자바스크립트의 함수는 변수에 저장할 수 있습니다.
+            // myFunction();
+
+            var clickHandler2 = function(event) { // 익명함수
+                alert('세 번째 버튼 클릭');
+            }
+
+            window.addEventListener("load", function() { // load : 브라우저가 html문서를 읽은 후 발생하는 이벤트
+
+                // document object : html 문서
+                // document.querySelector() : 선택자 구문을 사용해서 객체를 검색하는 함수
+                var btn2 = document.querySelector('#btn2'); // id='btn2'인 객체 반환
+                btn2.addEventListener("click", clickHandler); // 'click' 이벤트가 발생하면 clickHandler가 호출되도록 등록
+
+                var btn3 = document.querySelector('#btn3'); // id='btn3'인 객체 반환
+                btn3.addEventListener("click", clickHandler2); // 'click' 이벤트가 발생하면 clickHandler2가 호출되도록 등록
+
+                var btn4 = document.querySelector('#btn4'); // id='btn4'인 객체 반환
+                btn4.addEventListener("click", function(event) { 
+                    alert("네 번째 버튼 클릭"); 
+                }); // 'click' 이벤트가 발생하면 지정된 함수가 호출되도록 등록
+                
+            });
+
+            
+
+        </script>
+    </body>
+</html>
