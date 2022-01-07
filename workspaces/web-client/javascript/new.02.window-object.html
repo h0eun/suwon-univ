@@ -22,10 +22,30 @@
         
 
         <script type="text/javascript">
+
+            var timer = null;
+
+            function showTimeString() {
+                var message = document.querySelector("#message");
+                message.innerHTML = new Date().toString();
+                // setTimeout(함수, 시간) -> 지정된 시간(1/1000초) 이후에 함수 호출
+                timer = window.setTimeout(showTimeString, 1000);
+            }
             window.addEventListener('load', function(event) {
                 var startButton = document.querySelector("#start-button");
                 var stopButton = document.querySelector("#stop-button");
-                
+
+                startButton.addEventListener('click', function(event) {
+                    // console.log('start');
+                    showTimeString();
+                });
+                stopButton.addEventListener('click', function(event) {
+                    // console.log('stop');
+                    if (timer != null) {
+                        window.clearTimeout(timer);// 예약된 타이머 호출 취소
+                        timer = null;
+                    }
+                });                
             });
         </script>
     </body>
