@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+    </style>
+    </head>
+    <body>
+        <button id="add-button">ADD BUTTON</button>
+        <hr>
+        <div id="button-container">
+            <button class="buttons">BUTTON 1</button>
+        </div>
+        <hr>
+        <div id="message"></div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script type="text/javascript">
+
+            $(function() {
+
+                $('#add-button').on('click', function(event) {
+                    var cnt = $('#button-container button').length;
+                    $('<button></button>').addClass('buttons')
+                                          .text("BUTTON " + (cnt + 1))
+                                          .appendTo($('#button-container'));
+                });
+
+                // 현재 HTML에 포함된 class=buttons인 객체에 이벤트 연결
+                // $('.buttons').on('click', function(event) {
+                //     $('#message').html("<h2>" + $(this).text() + " is clicked</h2>");
+                // });
+
+                // 현재 존재하는 id=button-container인 객체에게 현재 + 미래에 존재할 class=buttons인 하위 객체에 이벤트 전달 요청 등록
+                $('#button-container').on('click', '.buttons', function(event) {
+                    $('#message').html("<h2>" + $(this).text() + " is clicked</h2>");
+                });
+
+            });
+
+        </script>
+    </body>
+</html>
