@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Document Object Test</title>
+
+    </head>
+    <body>
+
+        <button id="button">문서 정보 확인</button>
+        <hr>
+        <div id="message"></div>
+
+        <script type="text/javascript">
+
+            window.addEventListener("load", function() {
+                var button = document.querySelector('#button'); // id="button"인 객체 찾기
+                button.addEventListener('click', function(event) {
+                    var message = document.getElementById("message"); // id="message"인 객체 찾기 -> document.querySelector('#message')
+                    message.innerHTML = "<h3>" +
+                                        document.URL + "<br>" +
+                                        document.lastModified + "<br>" +
+                                        document.title +
+                                        "</h3>"
+                });
+            });
+
+            
+
+        </script>
+    </body>
+</html>
