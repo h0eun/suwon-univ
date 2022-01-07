@@ -27,7 +27,17 @@
 
             function showTimeString() {
                 var message = document.querySelector("#message");
-                message.innerHTML = new Date().toString();
+                //message.innerHTML = new Date().toString();
+                var date = new Date();
+                message.innerHTML = "<h3>" +
+                                    date.getFullYear() + "년 " +
+                                    (date.getMonth() + 1) + "월 " + 
+                                    date.getDate() + "일 " +
+                                    date.getHours() + "시 " +
+                                    date.getMinutes() + "분 " +
+                                    date.getSeconds() + "초";
+                
+                
                 // setTimeout(함수, 시간) -> 지정된 시간(1/1000초) 이후에 함수 호출
                 timer = window.setTimeout(showTimeString, 1000);
             }

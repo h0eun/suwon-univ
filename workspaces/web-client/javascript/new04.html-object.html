@@ -24,11 +24,22 @@
                     td.style.height = "100px";
                     td.style.backgroundColor = colors[i]; // <td style="background-color:red"
 
-                    td.addEventListener('click', function(event) {
+                    // td.addEventListener('click', function(event) {
+                    //     // click된 객체의 색상 -> canvas에 적용
+                    //     var d = event.target; // event.target : 현재 처리하고 있는 이벤트가 발생한 객체
+                    //     canvas.style.backgroundColor = d.style.backgroundColor;
+                    // });
+
+                    td.addEventListener('mouseenter', function(event) {
                         // click된 객체의 색상 -> canvas에 적용
                         var d = event.target; // event.target : 현재 처리하고 있는 이벤트가 발생한 객체
                         canvas.style.backgroundColor = d.style.backgroundColor;
-                    })
+                    });
+                    td.addEventListener('mouseout', function(event) {
+                        // click된 객체의 색상 -> canvas에 적용
+                        var d = event.target; // event.target : 현재 처리하고 있는 이벤트가 발생한 객체
+                        canvas.style.backgroundColor = "";
+                    });
 
                     tr.appendChild(td);  
                 }
