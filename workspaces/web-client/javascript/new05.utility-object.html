@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style type="text/css">
+        td {
+            text-align: center;
+            height: 50px;
+        }
+        .number {
+            width: 50px
+        }
+    </style>
+    </head>
+    <body>
+
+        <table border="1" style="margin: 0 auto">
+            <tr>
+                <td colspan="6">
+                    <button id="select-numbers-button">당첨 예상 번호 뽑기</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="number"></td>
+                <td class="number"></td>
+                <td class="number"></td>
+                <td class="number"></td>
+                <td class="number"></td>
+                <td class="number"></td>
+            </tr>
+        </table>
+
+        <script type="text/javascript">
+
+            window.addEventListener("load", function() { // load : 브라우저가 html문서를 읽은 후 발생하는 이벤트
+
+                var button = document.querySelector('#select-numbers-button');
+                button.addEventListener('click', function(event) {
+                    
+                    //  1 ~ 45, 6개, random, 중복 X
+                    var numbers = []; // new Array();
+                    do {
+                        for (var i = 0; i < 6; i++) {
+                            var number = Math.random(); // 0 ~ 1 (0은 포함, 1은 포함 X)
+                            number = number * 45; // 0 ~ 45 ( 45는 포함 X )
+                            number = Math.ceil(number); // 1 ~ 45 (45 포함)
+                            numbers[i] = number;
+
+                            // 중복 검사 (중복되면 다시 뽑기)
+                            for (var j = 0; j < i; j++) {
+                                if (numbers[i] == numbers[j]) {
+                                    i--; // or i = -1;
+                                    break;
+                                }
+                            }
+                        }
+                        // 평균 검사
+                        var sum = 0;
+                        for (var i = 0; i < numbers.length; i++) { // 배열.length : 요소의 갯수
+                            sum += numbers[i];
+                        }
+                        var mean = sum / numbers.length;
+                    } while (mean < 20 || mean > 26); // mean이 20 ~ 26이 아니면 다시 뽑기
+
+                    var dts = document.querySelectorAll(".number"); // 해당 객체 전체 반환 (여러 개 반환)
+                    for (var i = 0; i < 6; i++) {
+                        dts[i].innerHTML = "<h3>" + numbers[i] + "</h3>";
+                    }
+                    console.log(mean);
+                });
+
+            });
+
+        </script>
+    </body>
+</html>
