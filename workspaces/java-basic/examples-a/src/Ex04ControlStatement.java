@@ -5,7 +5,7 @@ public class Ex04ControlStatement {
 		
 		//Math.random() : 0 ~ 1 범위의 (double형) 난수 발생기
 		double r = Math.random();
-		// System.out.println( r );
+		//System.out.println( r );
 		
 		int number = (int)(r * 900) + 100; // 100 ~ 1000 범위의 정수
 		System.out.println( number );

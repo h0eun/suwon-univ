@@ -18,7 +18,7 @@ public class Ex04ControlStatement7 {
 		/////////////////////////////////////////////////////
 		
 		x = 0;
-		while (true) { //무한 반복
+		while (true) { //무한 반복 ( 반드시 반복문 내부에 실질적인 break 처리가 있어야 합니다. )
 			System.out.printf("%d번째 데이터\n", (x + 1));
 			x += 1;
 			
@@ -53,8 +53,15 @@ public class Ex04ControlStatement7 {
 		System.out.println("***************************");
 		///////////////////////////////////////////////////
 		
+		for(x = 0; x < n; x++) {
+			System.out.println(x+1);
+		}
+		
+		System.out.println("***************************");
+		///////////////////////////////////////////////////
+		
 		//for(int idx = 0; idx < 10; idx = idx + 1) {
-		for(int idx = 0; idx < 10; idx = idx + 2) {
+		for(int idx = 0; idx < 10; idx += 2) { // idx += 2 = idx = idx + 2
 			System.out.println(idx);
 		}
 		

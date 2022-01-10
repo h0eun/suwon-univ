@@ -46,9 +46,6 @@ public class Ex04ControlStatement9 {
 			}			
 			System.out.println();
 		}
-		
-		
-
 	}
 
 }

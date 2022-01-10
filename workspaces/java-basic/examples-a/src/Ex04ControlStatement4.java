@@ -5,6 +5,7 @@ public class Ex04ControlStatement4 {
 		
 		//1. 점수 3개 입력 (정수)
 		java.util.Scanner scanner = new java.util.Scanner(System.in);
+		
 		System.out.print("점수 1 : ");
 		int score1 = scanner.nextInt();
 		System.out.print("점수 2 : ");
