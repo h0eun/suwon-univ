@@ -5,6 +5,8 @@ public class Ex05Array {
 		
 		//1. 배열 만들기
 		//int a;
+		// int[] ar = null; // 참조 변수 만들기
+		// ar = new int[10]; // 요소가 10개인 배열 인스턴스 만들기 + 인스턴스의 주소를 ar 참조변수에 저장
 		int[] ar = new int[10]; //int 데이터 10개를 관리하는 배열
 		
 		//2. 배열 요소 사용
@@ -18,6 +20,8 @@ public class Ex05Array {
 			System.out.printf("%d번째 데이터 : %d\n", i, ar[i]);
 		}
 		
+		System.out.println("============================");
+		
 		//3. 배열 초기화
 //		int x;  //선언
 //		x = 10; //대입
@@ -29,6 +33,8 @@ public class Ex05Array {
 		for (int i = 0; i < ar3.length; i++) { // 배열.length : 요소 갯수
 			System.out.printf("%d번째 데이터 : %d\n", i, ar3[i]);
 		}
+		
+		System.out.println("===============================");
 		
 		//4. 다차원 배열
 		int[][] ar4 = new int[5][7]; // 5행 7열 or 가로(7) x 세로(5)
