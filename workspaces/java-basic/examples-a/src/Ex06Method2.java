@@ -14,7 +14,9 @@ public class Ex06Method2 {
 		int height = scanner.nextInt();
 		
 		//메서드 호출 - 메서드의 코드가 실행되도록 요청
-		drawBox(s, width, height);		
+		drawBox(s, width, height);
+		
+		scanner.close();
 	}
 	//메서드 정의 - 메서드 만들기
 	static void drawBox(String s, int width, int height) {

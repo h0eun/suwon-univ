@@ -50,6 +50,35 @@ public class Ex05Array {
 			System.out.println();
 		}
 		
+		System.out.println("==================================");
+		
+		//5. 요소의 크기가 다른 2차원 배열
+		int[][] ar5 = new int[5][];
+		for (int i = 0; i < ar5.length; i++) {
+			int[] x = new int[3 + i * 2];
+			for (int j = 0; j < x.length; j++) {
+				x[j] = (int)(Math.random() * 900) + 100;
+			}
+			ar5[i] = x;
+		}
+		
+		for (int row = 0; row < ar5.length; row++) {
+			for (int col = 0; col < ar5[row].length; col++) {
+				System.out.printf("[%5d]", ar5[row][col]);
+			}
+			System.out.println();
+		}
+		
+		System.out.println("==================================");
+		
+		// 향상된 for문 사용		
+		for (int[] rowItem : ar5) {
+			for (int colItem : rowItem) {
+				System.out.printf("[%5d]", colItem);
+			}
+			System.out.println();
+		}
+		
 
 	}
 

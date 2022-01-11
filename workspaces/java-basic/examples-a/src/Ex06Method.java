@@ -5,6 +5,7 @@ public class Ex06Method {
 				
 		//메서드 호출 - 메서드의 코드가 실행되도록 요청
 		drawBox();
+		drawBox();
 		
 		//영역
 		{
@@ -22,8 +23,8 @@ public class Ex06Method {
 
 	}
 
-	//메서드 정의 - 메서드 만들기
-	static void drawBox() {
+	// 함수 정의 : 코드를 재사용 가능한 관리 단위로 구성
+	private static void drawBox() {
 		for (int y = 0; y < 10; y++) {
 			for (int x = 0; x < 20; x++) {
 				if (x == 0 || x == 20 - 1 || 
@@ -36,6 +37,6 @@ public class Ex06Method {
 			System.out.println();
 		}
 	}
-	
+
 
 }
