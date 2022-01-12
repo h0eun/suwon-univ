@@ -1,5 +1,5 @@
 
-public class Ex06ObjectArray {
+public class Ex02ObjectArray {
 	
 	public static void main(String[] args) {
 		

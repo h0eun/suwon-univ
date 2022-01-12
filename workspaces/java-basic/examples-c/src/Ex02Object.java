@@ -1,5 +1,5 @@
 
-public class Ex05Object {
+public class Ex02Object {
 	
 	public static void main(String[] args) {
 		
@@ -32,9 +32,12 @@ public class Ex05Object {
 		System.out.println(obj3.hashCode());
 	}	
 }
-class MyObject /* extends Object */ {	
+
+class MyObject /* extends Object */ {
+	
 	int no;
 	String name;	
+	
 	@Override
 	public boolean equals(Object obj) {
 		
@@ -54,7 +57,7 @@ class MyObject /* extends Object */ {
 	
 	@Override
 	public int hashCode() {
-		return no; // 고유값을 반환하도록 정의
+		return no; // 고유 값을 반환하도록 정의
 	}
 	
 	//Object.toString : 객체의 정보를 문자열로 반환하는 메서드
