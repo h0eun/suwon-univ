@@ -24,7 +24,7 @@ abstract class TheAbstract {
 }
 
 //추상 클래스는 상속을 통해서 사용
-//추상 클래스를 상속하는 클래스는 반드시 추상메서드를 재정의
+//추상 클래스를 상속하는 클래스는 반드시 추상메서드를 재정의 하거나
 class TheSpecified extends TheAbstract {
 
 	@Override
@@ -32,6 +32,13 @@ class TheSpecified extends TheAbstract {
 	}
 	
 }
+
+//추상 클래스를 상속하는 클래스는 다른 추상클래스로 정의
+abstract class TheAbstract2 extends TheAbstract {
+
+	
+}
+
 
 
 
