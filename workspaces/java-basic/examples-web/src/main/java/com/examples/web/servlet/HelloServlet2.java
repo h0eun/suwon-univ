@@ -25,6 +25,9 @@ public class HelloServlet2 extends HttpServlet {
 		out.write("<body>");
 		out.write("<h1 style='text-align:center'>Hello Servlet 2 !!!!!</h1>");
 		out.write("</body>");
+		out.write("</html>");
+		
+		
 		
 	}
 
