@@ -41,7 +41,7 @@ Cookie cookie =
 
 //만료시간을 지정하면 쿠키를 파일로 기록
 //-> 브라우저를 종료하고 다시 실행해도 쿠키 값을 읽을 수 있습니다.
-//cookie.setMaxAge(60 * 10); //10분 동안 쿠키 유지
+cookie.setMaxAge(60 * 10); //10분 동안 쿠키 유지
 //cookie.setMaxAge(0); //--> 쿠키 제거
 
 response.addCookie(cookie);//응답 객체에 쿠키를 기록 --> 브라우저에 쿠기 저장
@@ -54,8 +54,7 @@ if (session.getAttribute("sessiondata") != null) {
 }
 
 //세션에 값을 저장
-session.setAttribute(
-	"sessiondata", Integer.valueOf(sessionData + 1));
+session.setAttribute("sessiondata", Integer.valueOf(sessionData + 1));
 
 
 //3. Application (ServletContext)
